@@ -12,3 +12,4 @@
 <tensorflow-gpu 환경 구축 관련 참고 블로그>
 1. https://chancoding.tistory.com/89
 2. https://webnautes.tistory.com/1454 (비교적 최신)
+ㅐ
