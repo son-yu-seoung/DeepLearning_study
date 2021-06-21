@@ -41,7 +41,7 @@ Y = [12.27, 14.44, 11.87, 18.75, 17.52, 16.37,
 #         print(i, 'a:', a.numpy(), 'b:', b.numpy(), 'loss:', compute_loss().numpy())
 
 # 그래프를 그리기 위해 회귀선의 x, y 데이터를 구한다.
-line_x = np.arange(min(X), max(X), 0.01)
+line_x = np.arange(min(X), max(X), 0.01) # 중요 그래프 그릴 때 x 범위 잡기!
 line_y = a * line_x + b
 
 plt.plot(X, Y, 'bo')
