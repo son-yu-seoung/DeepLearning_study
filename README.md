@@ -17,3 +17,5 @@
     *: Regression에 대한 공부(p.73 ~ p.91)(Linear, Nonlinear, DeepLearning Network)*
     * 다음 진도  
     *: 보스턴 주택 가격(p.91)부터 ~_*
+    * 기타   
+    *: 개발 환경, github 저장소 구축*
