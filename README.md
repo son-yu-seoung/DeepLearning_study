@@ -21,3 +21,12 @@
     *: 보스턴 주택 가격(p.91)부터 ~_*
     * 기타   
     *: 개발 환경, github 저장소 구축*
+  
+  - __2일차__
+  
+    * 공부한 내용  
+    *: 보스턴 주택 가격예측, 분류(Classification)(Binary_Calssification ~p.113*
+    * 다음 진도  
+    *: Binary_Classification p.113부터~*
+    * 기타   
+    *: .*
