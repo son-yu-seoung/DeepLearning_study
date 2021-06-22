@@ -19,7 +19,7 @@ model = tf.keras.Sequential([
 model.compile(optimizer=tf.keras.optimizers.SGD(lr=0.1), loss='mse')
 model.summary()
 
-model.fit(X, Y, epochs=10)
+history = model.fit(X, Y, epochs=10)
 #model.predict(X)
 
 # 회귀 선 그리기
