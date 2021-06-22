@@ -29,4 +29,15 @@
     * 다음 진도  
     *: Binary_Classification p.113부터~*
     * 기타   
+    *: 과적합 방지 가능한 callbacks 함수 기억*
+  
+  - __3일차__
+  
+    * 공부한 내용  
+    *: Binary_Classification완료, ~*
+    * 다음 진도  
     *: .*
+    * 기타   
+    *: tf.keras.utils.to_categorical함수 기억*
+    
+ 
