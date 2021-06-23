@@ -34,9 +34,9 @@
   - __3일차__
   
     * 공부한 내용  
-    *: Binary_Classification완료, ~*
+    *: Binary_Classification완료, CNN, RNN(유튜브 강의 조금)*
     * 다음 진도  
-    *: .*
+    *: RNN 이해하기 !!!*
     * 기타   
     *: tf.keras.utils.to_categorical함수 기억*
     
