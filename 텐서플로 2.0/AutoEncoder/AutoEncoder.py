@@ -3,6 +3,7 @@
 # 인코더는 특징 추출기 역할 : 입력 이미지에서 특징을 추출하여 1차원의 벡터(잠재 변수)로 만듬
 
 # MNIST 데이터로 실습
+from threading import Timer
 import tensorflow as tf
 import matplotlib.pyplot as plt
 
@@ -22,7 +23,6 @@ print(train_Y[0])
 # 모델 학습
 train_X = train_X.reshape(-1, 28, 28, 1)
 test_X = test_X.reshape(-1, 28, 28, 1)
-
 # 활성화 함수로 relu를 사용하면 복원된 이미지가 각지고 손실이 많이 일어난다.
 # 이유로는 relu는 0이하의 값이 들어오면 0으로 고정시켜버리기 때문
 # 그런 이유로 elu를 사용한다 elu는 0이하의 값이 들어오면 서서히 -1에 수렴시키는 함수(값이 relu보다는 보정됨)
@@ -40,7 +40,7 @@ model = tf.keras.Sequential([
 model.compile(optimizer=tf.keras.optimizers.Adam(), loss='mse', metrics=['accuracy'])
 model.summary()
 
-model.fit(train_X, train_X, epochs=20, batch_size=256)
+model.fit(train_X, train_X, epochs=2, batch_size=256)
 
 # 테스트 데이터로 컨볼루션 오토인코더의 이미지 재생성
 import random
@@ -54,10 +54,45 @@ for c in range(4):
     plt.axis('off')
 
     plt.subplot(4, 2, c*2+2)
-    img = model.predict(np.expand_dims(test_X[rand_index], axis=0))
+    img = model.predict(np.expand_dims(test_X[rand_index], axis=0)) # axis=0이 하는 역할?
     plt.imshow(img.reshape(28, 28), cmap='gray')
     plt.axis('off')
 plt.show()
 
-model.evaluate(test_X, test_X) # 정확도가 왜 이렇게 낮은지 확인해보기 
+model.evaluate(test_X, test_X) 
 
+# 클러스터링(Clurstering)
+# 잠재변수를 이용해 데이터를 여러 개의 군집으로 클러스터링 할 수 있다.(비지도학습)
+# K-평균 클러스터링
+latent_vector_model = tf.keras.Model(inputs=model.input, outputs=model.layers[3].output)
+latent_vector = latent_vector_model.predict(train_X)
+print(latent_vector.shape) # (60000,64)
+print(latent_vector[0]) 
+
+from sklearn.cluster import KMeans
+# n_clusters = 클러스터 중심의 개수, n_init = 알고리즘 실행 횟수, random_state = 알고리즘의 계산 결과를 동일하게 가져가기 위해 지정하는 랜덤 초기화 숫자
+kmeans = KMeans(n_clusters=10, n_init=10, random_state=42)
+kmeans.fit(latent_vector)
+
+print(kmeans.labels_) # 0~9사이 중 어떤 클러스터에 속하는지! (숫자 0~9가 아니라 ~번째 클러스터)
+print(kmeans.cluster_centers_.shape) 
+print(kmeans.cluster_centers_[0])
+
+# 각 클러스터에 속하는 이미지가 어떤 이미지인지 출력해서 확인해보기
+plt.figure(figsize=(12,12))
+
+for i in range(10): # 0~9
+    images = train_X[kmeans.labels_ == i] # 
+    for c in range(10):
+        plt.subplot(10, 10, i*10+c+1)
+        plt.imshow(images[c].reshape(28,28), cmap='gray')
+        plt.axis('off')
+plt.show()
+
+# 잠재변수의 차원 수를 늘리거나 KMeans()의 n_init을 늘려서 좀 더 분류가 잘 되도록 시도해볼 수 있다.
+# 또는 n_cluster를 늘려서 클러스터를 더욱 세분화할 수 있다.
+
+
+# 하지만 클러스터를 시각화 하는 문제가 남아있다. 
+# 클러스터링 결과를 시각화할 수는 없을까? 2차원 혹은 3차원으로 잠재변수가 가진 차원을 축소해야함
+# t-SNE은 여기에 최적화된 알고리즘 p.349
