@@ -39,5 +39,13 @@
     *: AutoEncoder 실습, 유튜브 강의보기*
     * 기타   
     *: tf.keras.utils.to_categorical함수 기억*
-    
+      
+  - __4일차__
+  
+    * 공부한 내용  
+    *: AutoEncoder, Clustering*
+    * 다음 진도  
+    *: t-SNE알고리즘(p.349)*
+    * 기타   
+    *: 57-line에서 axis=0가 하는 역할(질문하기)*
  
