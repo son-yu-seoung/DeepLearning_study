@@ -3,6 +3,7 @@
 # 인코더는 특징 추출기 역할 : 입력 이미지에서 특징을 추출하여 1차원의 벡터(잠재 변수)로 만듬
 
 # MNIST 데이터로 실습
+from re import A
 from threading import Timer
 import tensorflow as tf
 import matplotlib.pyplot as plt
@@ -40,24 +41,29 @@ model = tf.keras.Sequential([
 model.compile(optimizer=tf.keras.optimizers.Adam(), loss='mse', metrics=['accuracy'])
 model.summary()
 
-model.fit(train_X, train_X, epochs=2, batch_size=256)
+model.fit(train_X, train_X, epochs=1, batch_size=256)
 
 # 테스트 데이터로 컨볼루션 오토인코더의 이미지 재생성
 import random
 import numpy as np
 
 plt.figure(figsize=(4,8))
-for c in range(4):
+for c in range(1):
     plt.subplot(4, 2, c*2+1)
     rand_index = random.randint(0, test_X.shape[0])
     plt.imshow(test_X[rand_index].reshape(28, 28), cmap='gray')
     plt.axis('off')
 
     plt.subplot(4, 2, c*2+2)
-    img = model.predict(np.expand_dims(test_X[rand_index], axis=0)) # axis=0이 하는 역할?
+    #img = model.predict(test_X[rand_index])
+    img = model.predict(np.expand_dims(test_X[rand_index], axis=0)) # axis=0이 하는 역할? : (28, 28, 1) -> (1, 28, 28, 1)로 바뀜 !
+    print(img.shape)
+    print(test_X[0].shape)
     plt.imshow(img.reshape(28, 28), cmap='gray')
     plt.axis('off')
 plt.show()
+print(img.shape)
+print(test_X[0].shape)
 
 model.evaluate(test_X, test_X) 
 
@@ -90,9 +96,48 @@ for i in range(10): # 0~9
 plt.show()
 
 # 잠재변수의 차원 수를 늘리거나 KMeans()의 n_init을 늘려서 좀 더 분류가 잘 되도록 시도해볼 수 있다.
-# 또는 n_cluster를 늘려서 클러스터를 더욱 세분화할 수 있다.
+# 또는 n_cluster를 늘려서 클러스터를 
+# 더욱 세분화할 수 있다.
 
 
-# 하지만 클러스터를 시각화 하는 문제가 남아있다. 
+# 하지만 클러스터를 시각화 하는 문제가 남아있다., 클러스터링은 잠재변수에서 하는 것이기에 잠재변수는 64차원
 # 클러스터링 결과를 시각화할 수는 없을까? 2차원 혹은 3차원으로 잠재변수가 가진 차원을 축소해야함
 # t-SNE은 여기에 최적화된 알고리즘 p.349
+from sklearn.manifold import TSNE
+
+tsne = TSNE(n_components=2, learning_rate=100, perplexity=15, random_state=0)
+# n_componets=차원수, learning_rate=10~1000, perplexity=알고리즘 계산에서 고려할 최근접 이웃의 숫자,
+# perplexity를 몇으로 설정하냐에 따라 데이터 모양이 달라지므로 여러번 실험해봐야함
+tsne_vector = tsne.fit_transform(latent_vector[:5000])
+# 학습과 변환 과정을 동시에 진행하는 함수, 함수로 결과값을 반환
+#  훈련 데이터 중 5,000개만 사용(많아지면 계산 속도가 느려짐 64차원이라)
+
+cmap = plt.get_cmap('rainbow', 10)
+fig = plt.scatter(tsne_vector[:, 0], tsne_vector[:, 1], marker='.', c=train_Y[:5000], cmap=cmap)
+cb = plt.colorbar(fig, ticks=range(10))
+n_clusters = 10
+tick_locs = (np.arange(n_clusters) + 0.5) * (n_clusters-1) / n_clusters
+
+cb.set_ticks(tick_locs)
+cb.set_ticklabels(range(10))
+
+plt.show()
+
+# 클러스터 분리 결과를 좀 더 직관적으로 확인하기 위해서 t-SNE로 분리된 클러스터위에 MNIST출력 !!!!
+from matplotlib.offsetbox import TextArea, DrawingArea, OffsetImage, AnnotationBbox
+
+plt.figure(figsize=(16, 16))
+
+tsne = TSNE(n_components=2, learning_rate=100, perplexity=15, random_state=0)
+tsne_vector = tsne.fit_transform(latent_vector[:5000])
+
+ax = plt.subplot(1, 1, 1)
+ax.scatter(tsne_vector[:, 0], tsne_vector[:, 1], marker='.', c=train_Y[:5000], cmap='rainbow')
+for i in range(200):
+    imagebox = OffsetImage(train_X[i].reshape(28, 28))
+    # AnnotationBbox : 이미지나 텍스트 등의 주석을 그래프 위에 표시하기 위한 함수 
+    ab = AnnotationBbox(imagebox, (tsne_vector[i,0], tsne_vector[i,1]), frameon=False, pad=0.0)
+    ax.add_artist(ab)
+ax.set_xticks([])
+ax.set_yticks([])
+plt.show()
