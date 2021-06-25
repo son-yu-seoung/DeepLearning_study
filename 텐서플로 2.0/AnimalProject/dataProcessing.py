@@ -75,7 +75,7 @@ class dataSet():
 
     #normalize Z-transform
     def normZT(self, x):
-        x = (x - np.mean(x)) / np.std(x)  #  (x - np.mean(x) / np.std(x))코드에서 수정! 수정 전에는 imshow할 때 사진 나왔음
+        x = (x - np.mean(x)) / np.std(x)  # (x - np.mean(x) / np.std(x))코드에서 수정! 수정 전에는 imshow할 때 사진 나왔음
         return x
     
     def normMinMax(self, x):
