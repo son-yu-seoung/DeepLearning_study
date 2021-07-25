@@ -4,7 +4,10 @@ LeNet
 : LeNet은 Convolution Neural Network라는 개념을 최초로 개발한 Yann LeCun이 개발한 구조이다. Convolution과 Subsampling을 반복적으로 거치면서, 마지막에 Fully-connected Multi-layerd Neural Network로 Classification을 수행하고 있다.
 
 AlexNet
-: AlexNet은 ImageNet 영상 데이터 베이스를 기반으로 한 화상 인식 대회인 "ILSVRC 2012"에서 우승한 CNN 구조이다. 전체적으로 보면 2개의 GPU를 기반으로 한 병렬 구조인 점을 제외하면, LeNet-5와 크게 다르지 않다. AlexNet은 5개의 convolution layers와 3개의 fully-connected layers로 구성되어 있으며 마지막 FC layer는 1000개의 category로 분류하기 위해 활성 함수로 softmax 함수를 사용하고 있다. 이러한 설계로 인해 AlexNet은 약 65만개의 뉴런과 6,000만개의 자유 파라미터, 6.3억개의 connection이라는 방대한 CNN 구조를 가지게 되었다. AlexNet은 2개의 GPU를 사용한 학습 이외에도 성능, 속도 개선을 위하여 아래와 같은 여러가지 방법을 사용한다.
+: AlexNet은 ImageNet 영상 데이터 베이스를 기반으로 한 화상 인식 대회인 "ILSVRC 2012"에서 우승한 CNN 구조이다. 전체적으로 보면 2개의 GPU를 기반으로 한 병렬 구조인 점을 제외하면, 
+LeNet-5와 크게 다르지 않다. AlexNet은 5개의 convolution layers와 3개의 fully-connected layers로 구성되어 있으며 마지막 FC layer는 1000개의 category로 분류하기 위해 활성 함수로 softmax
+함수를 사용하고 있다. 이러한 설계로 인해 AlexNet은 약 65만개의 뉴런과 6,000만개의 자유 파라미터, 6.3억개의 connection이라는 방대한 CNN 구조를 가지게 되었다. AlexNet은 2개의 GPU를 사용한 
+학습 이외에도 성능, 속도 개선을 위하여 아래와 같은 여러가지 방법을 사용한다.
 
 1. ReLU
 
