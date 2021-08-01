@@ -51,10 +51,5 @@ StyleGAN의 네트워크 구성
 2. PG-GAN과 같이 확률적으로 생성한 잠재적 변수로부터 이미지를 생성하지 않고, 고정치로 이미지를 생성한다.
 3. 확률적으로 생성된 잠재변수는 8층 뉴럴 네트워크에서 비선형변환된 Style벡터 W가 되어, 각 해상도에서 AdalIN을 통해 입력된다. 
 
+★ SRGAN(Super Resolution GAN) ★
 
-
-
-
-
-SR에 넣을만한 것들
-1. 가중치 합치기 DenseTranspose
