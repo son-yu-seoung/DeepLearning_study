@@ -1,0 +1,1 @@
+< 손실 함수들의 종류와 기능 특징등을 정리해놓자 특히 sparse_categorical_crossentropy, categorical_crossentropy, sparse_categorical_accuracy >  
