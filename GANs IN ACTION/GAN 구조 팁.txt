@@ -1,0 +1,5 @@
+train_on_batch(imgs, real) : 판별자를 각각 훈련하는 방법
+train_on_batch(gen_imgs, fake)
+
+generator.predict(z) : 생성자를 학습하는 단계가 아니기 때문에 predict로 gen_imgs 생성 
+
