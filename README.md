@@ -7,6 +7,7 @@
 ### 현재 기재된 서적
 
 + 텐서플로 2.0 프로그래밍
++ GANs IN ACTION
 + 추가될 예정
 
 ### 기록
@@ -93,4 +94,15 @@
     *: Q-Learning 완료*
     * 기타   
     *: *
+    
++ GANs IN ACTION
+
+  - __1일차__
+  
+    * 공부한 내용  
+    *: DCGAN(unit 4) model coding*
+    * 다음 진도  
+    *: study discriminator trainable properties*
+    * 기타   
+    *: english only project*
 
