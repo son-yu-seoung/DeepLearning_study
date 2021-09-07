@@ -106,3 +106,11 @@
     * 기타   
     *: english only project*
 
+  - __2일차__
+  
+    * 공부한 내용  
+    *: CycleGAN(unit 9) model study but, i'm need more study*
+    * 다음 진도  
+    *: study only*
+    * 기타   
+    *: english only project*
