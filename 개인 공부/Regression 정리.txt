@@ -1,0 +1,12 @@
+[ Regression 종류 ]
+1. Linear Regression
+: 가장 널리 알려진 모델링 기술 중 하나이며 종속 변수(Y)는 연속적이며 독립 변수(X)는 연속적이거나 이산적일 수 있으며 회귀선은 선형을 가진다. 방정식 Y = a*X + b로 표시되며, 여기서는 a는 선의 기울기, b는 절편이다. 
+- 단순 선형 회귀와 다중 선형 회귀의 차이점은 독립 변수(X)의 수에 따라 결정된다. 학습한 선에 대해서는 최소 제곱법(Least Square Method)으로 정확도를 측정할 수 있다.
+
+※ 주요 사항
+- 독립 변수와 종속 변수 사이에는 선형 관계가 있어야 한다.
+- 다중 회귀 분석은 multicollinearity, autocorrelation, heteroskedasticity으로 인해 학습에 어려움을 격는다.
+- 복수의 독립 변수의 경우, 중요한 독립 변수를 선택함으로 변수의 수를 줄인다. 방법으로는 forward selection, backward elimination and stepwise approach가 있다.
+
+2. Logistic Regression
+: 로지스틱 회귀 분석은 true인지 false인지 확률을 찾는데 사용한다. 즉 종속변수(Y)가 이진(1/0, 참/거짓, 예/아니요)일 때 사용하는 회귀 분석이다. 여기서 Y값은 0에서 1까지이며 다음 방정식으로 나타낸다.
