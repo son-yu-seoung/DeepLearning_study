@@ -28,6 +28,16 @@
 ▪ from sklearn.svm import SVC
 ▪ model = SVC(kernel='linear', C=1.0, random_state=0)
 
+● SVM 매개변수 튜닝 ( https://tensorflowkorea.files.wordpress.com/2017/06/2-42.png )
+  ○ gamma
+     - 가우시안 커널 폭의 역수에 해당된다. 하나의 훈련 샘플이 미치는 영향의 범위를 결정한다.
+     - 작은 값은 넓은 영역을 의미하며 큰 값일 수록 영향이 미치는 범위가 제한적이다.
+     - 큰 값일수록 비선형적인 망?이 생긴다.
+
+  ○ C
+     - 선형모델에서 사용한 것과 비슷한 규제 매개변수. 각 포인트의 중요도(정확히는 dual_coef_ 값)       를 제한한다.
+     - C를 증가시키면 포인트들이 모델에 큰 영향을 주며 결정 경계를 휘어서 정확하게 분류하게한다
+
 : SVM이 머신러닝 실무자들에게 인기가 높은 이유 중 하나는 선형으로 분류가 되지 않는 모델에 대해서도 적용할 수 있다는 장점 때문이다. (실습 https://blog.naver.com/samsjang/220970865707)
 
 2. 랜덤 포레스트(Random Forest)
