@@ -7,7 +7,7 @@
 ### 현재 기재된 서적
 
 + 텐서플로 2.0 프로그래밍
-+ GANs IN ACTION
++ GANs IN ACTION  
 + 추가될 예정
 
 ### 기록
