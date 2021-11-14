@@ -1,10 +1,20 @@
-
+# < 목차 >
++ [Regression](#Regression)  
++ [Regressino의 종류](#CNN-종류)    
+  - [의사 결정 트리](#의사-결정-트리(Desision-Tree))  
+  - [SVM](#SVM(Support-Vector-Machine))  
+  - [랜덤 포레스트](#랜덤-포레스트(Random-Forest))  
+  - [Linear Regression](#Linear-Regression)  
+  - [Logistic Regression](#U-Logistic-Regression)  
+  - [Polynomial Regression](#Polynomial-Regression)
+  - [Stepwise Regression](#Stepwise-Regression)  
+  - [Ridge Regression](#[Ridge-Regression)  
 
 # Regression
 회귀분석은 다수의 특징값을 입력으로 하나의 특징값(실수값)을 산출하는 것이다.
 
 # Regression 종류
-
+### dd
 ### 의사 결정 트리(Desision Tree)
 : 우리는 한번쯤 스무고개라는 놀이를 해본 경험이 있을 것이다. 상대방이 가지고 있는 답을 20번 이내의 질문으로 알아 맞추는 것이다. 스무고개는 정답을 맞추는 사람이 질문을 잘 던져야 답을 제대로 찾아낼 수 있다. 스무고개와 비슷한 원리로, 의사결정트리 분류기는 일련의 질문에 근거하여 주어진 데이터를 분류해주는 알고리즘이다.
 
