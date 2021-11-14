@@ -1,6 +1,6 @@
 # < 목차 >
 + [OpenCV](#OpenCV)
-+ [Hough Transfer](#Hough Transfer)
++ [Hough Transfer](#Hough-Transfer)
 
 # OpenCV
 
