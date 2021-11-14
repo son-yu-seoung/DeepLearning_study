@@ -183,7 +183,7 @@ print('train_img ------> train_crop')
 
 # test = LineDetection()
 # test.start_detection()
-# test.show_image()
+# test.show_image() 
 
         
          
