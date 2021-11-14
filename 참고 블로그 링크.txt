@@ -1,0 +1,15 @@
+< PyQt5, PySide, Qt Designer >
+https://wikidocs.net/35742
+https://martinii.fun/146
+( 툴바, 액션바)
+https://wikidocs.net/36409
+
+
+<sklearn>
+https://scikit-learn.org/stable/supervised_learning.html#supervised-learning
+
+<기본기>
+https://datascienceschool.net/03%20machine%20learning/13.02%20%EC%84%9C%ED%8F%AC%ED%8A%B8%20%EB%B2%A1%ED%84%B0%20%EB%A8%B8%EC%8B%A0.html
+
+<앙상블, 등등 엄청 자세함 > 
+https://teddylee777.github.io/scikit-learn/scikit-learn-ensemble

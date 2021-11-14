@@ -1,5 +1,0 @@
-< PyQt5, PySide, Qt Designer >
-https://wikidocs.net/35742
-https://martinii.fun/146
-( 툴바, 액션바)
-https://wikidocs.net/36409
