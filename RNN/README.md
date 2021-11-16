@@ -27,7 +27,9 @@ RNN의 성공의 열쇠는 "Long Short-Term Memory Network"(이하 LSTM)의 사�
 LSTM은 RNN의 굉장히 특별한 종류로, 아까 얘기했던 영화를 frame 별로 이해하는 것과 같은 문제들을 단순 RNN 보다 정말 훨씬 진짜 잘 해결한다.  
 기존 RNN도 LSTM만큼 이런 일을 잘 할 수 있다면 RNN은 대단히 유용할 텐데, 아쉽게도 RNN은 그 성능이 상황에 따라 그 때 그 때 다르다.  
 
-
+![문제](https://user-images.githubusercontent.com/65440674/141972566-9badebad-c1ad-4097-a917-86ac6dd8bb09.png)  
+                                                <p align=center>**<긴 기간에 의존하는 RNN>**</p>
+  
 "I grew up in France... I speak fluent French"라는 문단의 마지막 단어를 맞추고 싶다고 생각해보자. 최근 몇몇 단어를 봤을 때 아마도 언어에 대한 단어가 와야 될 것이라 생각할 수는 있지만, 어떤 나라 언어인지 알기 위해서는 프랑스에 대한 문맥을 훨씬 뒤에서 찾아봐야 한다.    
 이렇게 되면 필요한 정보를 얻기 위한 시간 격차는굉장히 커지게 된다.    
 **안타깝게도 이 격차가 늘어날 수록 RNN은 학습하는 정보를 계속 이어나가기 힘들어한다.**  
@@ -35,5 +37,10 @@ LSTM은 RNN의 굉장히 특별한 종류로, 아까 얘기했던 영화를 fram
 
 
 # RNN 종류
-### LSTM
+### LSTM(참고 - https://dgkim5360.tistory.com/entry/understanding-long-short-term-memory-lstm-kr)
+LSTM은 RNN의 특별한 한 종류로, 긴 의존 기간을 필요로 하는 학습을 수행할 능력을 갖고 있다.   
+LSTM은 Hochreiter & Schmidhuber (1997)에 의해 소개되었고, 그 후에 여러 추후 연구로 계속 발전하고 유명해졌다. LSTM은 여러 분야의 문제를 굉장히 잘 해결했고, 지금도 널리 사용되고 있다.  
+  
++ LSTM은 긴 의존 기간의 문제를 피하기 위해 명시적으로(explicitly) 설계되었다.
+
 
