@@ -1,10 +1,10 @@
 # < 목차 >
 + [RNN이란](#RNN(Recurrent-Neural-Network))
-+ [RNN의 종류](#RNN-종류)  
-  - [LSTM](#LSTM)
-  - [LeNet](#LeNet)
-  - [ZFNet](#ZFNet)
-  - [GoogleNet](#GoogleNet)
++ [RNN 레이어의 종류](#RNN-종류)  
+  - [SimpleRNN](#SimpleRNN-Layer)
+  - [LSTM](#LSTM-Layer)
+  - [GRU](#GRU-Layer)
+  - [Embedding](#Embedding-Layer)
   - [U-Net](#U-Net)
   - [ResNet](#ResNet)
 + [Hyperparameter](#Hyperparameter)
@@ -43,4 +43,33 @@ LSTM은 Hochreiter & Schmidhuber (1997)에 의해 소개되었고, 그 후에 �
   
 + LSTM은 긴 의존 기간의 문제를 피하기 위해 명시적으로(explicitly) 설계되었다.
 
+# RNN의 종류
+
+### SimpleRNN Layer
+  
+### LSTM Layer
+- SimpleRNN 레이어의 치명적 단점인 장기의존성 문제를 해결할 수 있는 모델
+ 
+(그림)
+i : input
+f : forget
+o : output
+c(~) : x(t)와 h(t-1)을 각각 U와 W에 곱한 뒤에 tanh 함수를 취한 값, 셀 상태인 c(t)가 되지 전의 출력 값
+c : 셀 상태
+h : 셀 상태에 tanh 함수를 취한 값을 Output 게이트의 출력에 곱한다.
+  
+### GRU Layer
+- LSTM 과의 가장 큰 차이점은 셀 상태가 보이지 않는다는 것. GRU에서는 h(t)가 비슷한 역할을 한다.
+- GRU 레이어는 LSTM 레이어와 비슷한 역할을 하지만 구조가 더 간단하기 때문에 계산상의 이점이 있다.
+- 어떤 문제에서는 LSTM보다 GRU가 좋으며 파라미터 수에서도 이점을 볼 수 있다.
+  
+(그림)
+z(t) : Update 게이트를 통과한 출력
+r(t) : Reset 게이트
+h(~t) : 
+h(t) : 
+  
+### Embedding Layer
+임베딩 레이어는 자연어를 수치화된 정보로 바꾸기 위한 레이어이다.
+  
 
