@@ -26,3 +26,6 @@ model.summary()
 
 model.fit(X, Y, epochs=1000)
 print(model.predict(X))
+
+print(model.predict(np.array([[[0.6], [0.7], [0.8], [0.9]]])))
+print(model.predict(np.array([[[-0.1], [0.0], [0.1], [0.2]]])))
