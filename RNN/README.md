@@ -5,8 +5,8 @@
   - [LSTM](#LSTM-Layer)
   - [GRU](#GRU-Layer)
   - [Embedding](#Embedding-Layer)
-  - [U-Net](#U-Net)
-  - [ResNet](#ResNet)
+  - [DKT](#DKT(Deep-Knowledge-Tracing)
+  - [DKVMN](#DKVMN(Dynamic-Key-Value-Memory-Network))
 + [Hyperparameter](#Hyperparameter)
 + [Overfitting](#Overfitting)
 
@@ -71,5 +71,9 @@ h(t) :
   
 ### Embedding Layer
 임베딩 레이어는 자연어를 수치화된 정보로 바꾸기 위한 레이어이다.
+  
+### DKT(Deep-Knowledge-Tracing)
+
+### DKVMN(Dynamic-Key-Value-Memory-Network))
   
 
