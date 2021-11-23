@@ -71,9 +71,11 @@ h(t) :
   
 ### Embedding Layer
 임베딩 레이어는 자연어를 수치화된 정보로 바꾸기 위한 레이어이다.
+   
+### DKT(Deep-Knowledge-Tracing)  
+![1](https://user-images.githubusercontent.com/65440674/142961119-60488efd-0021-4221-8e6e-a006d0cfcceb.jpg)  
   
-### DKT(Deep-Knowledge-Tracing)
-
-### DKVMN(Dynamic-Key-Value-Memory-Network))
-  
+### DKVMN(Dynamic-Key-Value-Memory-Network))  
+![2](https://user-images.githubusercontent.com/65440674/142961132-320191bd-5cd8-4f86-b5bf-8c9338f33c9c.jpg)  
+![3](https://user-images.githubusercontent.com/65440674/142961216-37d9efa6-9ac3-48f5-8498-bab85b9a7183.jpg)  
 
