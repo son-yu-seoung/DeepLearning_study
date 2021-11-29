@@ -16,3 +16,6 @@ https://teddylee777.github.io/scikit-learn/scikit-learn-ensemble
 
 <얼굴 인식>
 https://blog.naver.com/samsjang/220699662173
+
+<AR 관련 강의 유튜브>
+- 개발자 옆 디자이너
